@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>🧮 Simple Calculator</h2>
+        <form method="post">
+            <input type="text" name="num1" placeholder="Enter first number" required>
+            <input type="text" name="num2" placeholder="Enter second number" required>
+            <div class="buttons">
+                <button type="submit" name="operation" value="add">+</button>
+                <button type="submit" name="operation" value="subtract">−</button>
+                <button type="submit" name="operation" value="multiply">×</button>
+                <button type="submit" name="operation" value="divide">÷</button>
+            </div>
+        </form>
+        {% if result != "" %}
+        <div class="result">
+            <h3>Result: {{ result }}</h3>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
